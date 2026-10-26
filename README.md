@@ -16,6 +16,8 @@ Aplicación en Python que se conecta a una base de datos PostgreSQL, crea una ta
 ```
 proyecto/
 ├── main.py            # conexión a la BD, creación, inserción y comprobación
+├── tabla.sql          # CREATE TABLE de la tabla characters
+├── insertarDatos.sql  # INSERT de los 10 personajes
 ├── Dockerfile         # imagen de la aplicación (python:3.12-slim)
 ├── compose.yaml       # servicios: db (postgres:17-alpine) y app
 ├── .env               # variables de entorno (usuario, contraseña, BD, DATABASE_URL)
