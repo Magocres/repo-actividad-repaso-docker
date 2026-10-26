@@ -65,3 +65,5 @@ def check_database_connection():
                 cur.execute(query_insert_data)
     except Exception as e:
         print(f"Error: {e}")
+
+check_database_connection()
