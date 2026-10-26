@@ -156,7 +156,7 @@ ON CONFLICT (id) DO NOTHING
 RETURNING id, name;
 """
 
-query = """
+query_delete_table = """
 DROP TABLE IF EXISTS characters;
 """
 
