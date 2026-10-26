@@ -42,14 +42,116 @@ INSERT INTO characters (
     'Human', 
     '', 
     'Male', 
-    'unknown', 
+    'Earth (C-137)', 
     'Citadel of Ricks', 
     'https://rickandmortyapi.com/api/character/avatar/2.jpeg', 
     'https://rickandmortyapi.com/api/character/2', 
     '2017-11-04T18:48:46.250Z'
-)
-ON CONFLICT (id) DO NOTHING
-RETURNING id, name;
+),
+(
+    3, 
+    'Summer Smith', 
+    'Alive', 
+    'Human', 
+    '', 
+    'Female', 
+    'Earth (C-137)', 
+    'Earth (Replacement Dimension)', 
+    'https://rickandmortyapi.com/api/character/avatar/3.jpeg', 
+    'https://rickandmortyapi.com/api/character/3', 
+    '2017-11-04T18:48:46.250Z'
+),
+(
+    4, 
+    'Beth Smith', 
+    'Alive', 
+    'Human', 
+    '', 
+    'Female', 
+    'Earth (C-137)', 
+    'Earth (Replacement Dimension)', 
+    'https://rickandmortyapi.com/api/character/avatar/4.jpeg', 
+    'https://rickandmortyapi.com/api/character/4', 
+    '2017-11-04T18:48:46.250Z'
+),
+(
+    5, 
+    'Jerry Smith', 
+    'Alive', 
+    'Human', 
+    '', 
+    'Male', 
+    'Earth (C-137)', 
+    'Earth (Replacement Dimension)', 
+    'https://rickandmortyapi.com/api/character/avatar/5.jpeg', 
+    'https://rickandmortyapi.com/api/character/5', 
+    '2017-11-04T18:48:46.250Z'
+),
+(
+    6, 
+    'Abadango Cluster Princess', 
+    'Alive', 
+    'Alien', 
+    '', 
+    'Female', 
+    'Abadango', 
+    'Abadango', 
+    'https://rickandmortyapi.com/api/character/avatar/6.jpeg', 
+    'https://rickandmortyapi.com/api/character/6', 
+    '2017-11-04T19:26:56.301Z'
+),
+(
+    7, 
+    'Abradolf Lincler', 
+    'Dead', 
+    'Human', 
+    'Genetic experiment', 
+    'Male', 
+    'Earth (C-137)', 
+    'Testicle Monster Dimension', 
+    'https://rickandmortyapi.com/api/character/avatar/7.jpeg', 
+    'https://rickandmortyapi.com/api/character/7', 
+    '2017-11-04T19:26:56.301Z'
+),
+(
+    8, 
+    'Adjudicator Rick', 
+    'Dead', 
+    'Human', 
+    '', 
+    'Male', 
+    'unknown', 
+    'Citadel of Ricks', 
+    'https://rickandmortyapi.com/api/character/avatar/8.jpeg', 
+    'https://rickandmortyapi.com/api/character/8', 
+    '2017-11-04T19:29:56.745Z'
+),
+(
+    9, 
+    'Agency Director', 
+    'Dead', 
+    'Human', 
+    '', 
+    'Male', 
+    'Earth (C-137)', 
+    'Earth (C-137)', 
+    'https://rickandmortyapi.com/api/character/avatar/9.jpeg', 
+    'https://rickandmortyapi.com/api/character/9', 
+    '2017-11-04T19:30:31.940Z'
+),
+(
+    10, 
+    'Alan Rails', 
+    'Dead', 
+    'Human', 
+    'Superhuman (Ghost trainsinda power)', 
+    'Male', 
+    'unknown', 
+    'Worldender\'s lair', 
+    'https://rickandmortyapi.com/api/character/avatar/10.jpeg', 
+    'https://rickandmortyapi.com/api/character/10', 
+    '2017-11-04T19:31:30.419Z'
+);
 """
 
 def check_database_connection():
