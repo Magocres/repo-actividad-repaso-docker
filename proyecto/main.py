@@ -156,6 +156,17 @@ ON CONFLICT (id) DO NOTHING
 RETURNING id, name;
 """
 
+query_select_first_ten = """
+SELECT id, name, species
+FROM characters
+ORDER BY id
+LIMIT 10;
+"""
+
+query_count = """
+SELECT COUNT(*) FROM characters;
+"""
+
 query_delete_table = """
 DROP TABLE IF EXISTS characters;
 """
@@ -178,6 +189,16 @@ def check_database_connection():
                 print(f"Inserciones realizadas: {len(inserted)}")
                 for character_id, name in inserted:
                     print(f"  - id={character_id}, name={name}")
+
+                cur.execute(query_select_first_ten)
+                rows = cur.fetchall()
+                print("Primeros 10 personajes:")
+                for character_id, name, species in rows:
+                    print(f"  - id={character_id}, name={name}, species={species}")
+
+                cur.execute(query_count)
+                total = cur.fetchone()[0]
+                print(f"Total de personajes guardados: {total}")
     except Exception as e:
         print(f"Error: {e}")
 
