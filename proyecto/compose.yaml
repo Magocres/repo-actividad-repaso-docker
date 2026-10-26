@@ -1,7 +1,7 @@
 services:
   db:
     image: postgres:17-alpine
-    env_file: .env
+    env_file: .env.example
     ports:
       - "5434:5432"
     volumes:
@@ -10,7 +10,7 @@ services:
   
   app:
     build: .
-    env_file: .env
+    env_file: .env.example
     depends_on:
       - db
       
