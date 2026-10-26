@@ -3,7 +3,7 @@ import psycopg
 
 
 query_create_table = """
-CREATE TABLE characters IF NOT EXISTS (
+CREATE TABLE IF NOT EXISTS characters (
     id              INTEGER PRIMARY KEY,
     name            TEXT NOT NULL,
     status          TEXT,
@@ -47,7 +47,9 @@ INSERT INTO characters (
     'https://rickandmortyapi.com/api/character/avatar/2.jpeg', 
     'https://rickandmortyapi.com/api/character/2', 
     '2017-11-04T18:48:46.250Z'
-);
+)
+ON CONFLICT (id) DO NOTHING
+RETURNING id, name;
 """
 
 def check_database_connection():
@@ -63,6 +65,11 @@ def check_database_connection():
 
                 cur.execute(query_create_table)
                 cur.execute(query_insert_data)
+                inserted = cur.fetchall()
+
+                print(f"Inserciones realizadas: {len(inserted)}")
+                for character_id, name in inserted:
+                    print(f"  - id={character_id}, name={name}")
     except Exception as e:
         print(f"Error: {e}")
 
