@@ -147,11 +147,17 @@ INSERT INTO characters (
     'Superhuman (Ghost trainsinda power)', 
     'Male', 
     'unknown', 
-    'Worldender\'s lair', 
-    'https://rickandmortyapi.com/api/character/avatar/10.jpeg', 
-    'https://rickandmortyapi.com/api/character/10', 
+    'Worldender''s lair',
+    'https://rickandmortyapi.com/api/character/avatar/10.jpeg',
+    'https://rickandmortyapi.com/api/character/10',
     '2017-11-04T19:31:30.419Z'
-);
+)
+ON CONFLICT (id) DO NOTHING
+RETURNING id, name;
+"""
+
+query = """
+DROP TABLE IF EXISTS characters;
 """
 
 def check_database_connection():
